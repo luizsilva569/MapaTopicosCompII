@@ -1,0 +1,22 @@
+quality gate:
+  required checks:
+    - pytest
+    - ruff
+    - static analysis
+  coverage threshold: 80
+  blocking check: true
+release:
+  versioning: semantic
+  deployment strategy: staged
+  deploy job: controlled
+  rollback: enabled
+safe change:
+  feature flag: enabled
+  canary: enabled
+  backward compatible: required
+code quality:
+  lint: ruff
+  complexity: reviewed
+evidence:
+  coverage report: versioned
+  test report: versioned
